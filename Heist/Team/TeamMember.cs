@@ -26,7 +26,7 @@ namespace Heist.Team
 
             foreach (var i in Team)
             {
-                Console.WriteLine($"{i.Name} {i.Skill} {i.Courage}");
+                Console.WriteLine($"Name: {i.Name} Skill: {i.Skill} Courage: {i.Courage}");
             };
 
             Console.WriteLine($"{count} members on team.");

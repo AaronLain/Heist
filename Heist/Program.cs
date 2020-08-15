@@ -14,7 +14,7 @@ namespace Heist
             Console.WriteLine("Plan your heist! Press Enter");
 
             var input = Console.ReadLine();
-
+            // lets build our team
             do
             {
                 Console.WriteLine("Enter Team Member's name: ");
@@ -32,9 +32,12 @@ namespace Heist
                 var tCourage = Convert.ToDouble(Console.ReadLine());
 
                 newTeam.createTeamMember(tName, tSkill, tCourage);
+                
+                newTeam.listTeam();
 
             } while (input != "" || input != "exit");
 
+            // check to see if the heist was successful once the team input loop breaks
             int result = newTeam.sumSkill();
 
             Console.WriteLine($"Skill: {result}, Difficulty: {bank.BankDifficulty}\r\n");
@@ -46,7 +49,7 @@ namespace Heist
             else
             {
                 Console.WriteLine("You failed! Looks like you're going to jail.");
-                }
+            }
         }
     }
 }
