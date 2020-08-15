@@ -26,10 +26,10 @@ namespace Heist.Team
 
             foreach (var i in Team)
             {
-                Console.WriteLine($"Name: {i.Name} Skill: {i.Skill} Courage: {i.Courage}");
+                Console.WriteLine($"Name: {i.Name}, Skill: {i.Skill}, Courage: {i.Courage}\r\n");
             };
 
-            Console.WriteLine($"{count} members on team.");
+            Console.WriteLine($"{count} members on team.\r\n");
         }
 
         public int sumSkill()
