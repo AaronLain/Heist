@@ -9,19 +9,32 @@ namespace Heist
         {
             var newt = new TeamMember();
 
-            Console.WriteLine("Plan your heist!");
-            Console.WriteLine("Enter Team Member's name: ");
-            var tName = Console.ReadLine();
+            Console.WriteLine("Plan your heist! Press Enter");
 
-            Console.WriteLine("Now enter their skill level: ");
-            var tSkill = Convert.ToInt32(Console.ReadLine());
+            var input = Console.ReadLine();
 
-            Console.WriteLine("Now enter their courage factor (with decimals please): ");
-            var tCourage = Convert.ToDouble(Console.ReadLine());
+            do
+            {
+                Console.WriteLine("Enter Team Member's name: ");
+                string tName = Console.ReadLine();
+                
+                if (tName == "exit" || tName == "")
+                {
+                    break;
+                }
 
-            newt.createTeamMember(tName, tSkill, tCourage);
-              
-            newt.listTeam();
+                Console.WriteLine("Now enter their skill level: ");
+                var tSkill = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Now enter their courage factor (with decimals please): ");
+                var tCourage = Convert.ToDouble(Console.ReadLine());
+
+                newt.createTeamMember(tName, tSkill, tCourage);
+
+                newt.listTeam();
+
+            } while (input != "" || input != "exit");
+            
 
         }
     }
