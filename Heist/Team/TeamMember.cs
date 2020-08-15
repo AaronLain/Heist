@@ -21,10 +21,14 @@ namespace Heist.Team
 
         public void listTeam()
         {
+            var count = Team.Count;
+
             foreach (var i in Team)
             {
                 Console.WriteLine($"{i.Name} {i.Skill} {i.Courage}");
-            }
+            };
+
+            Console.WriteLine($"{count} members on team.");
         }
     }
 }
