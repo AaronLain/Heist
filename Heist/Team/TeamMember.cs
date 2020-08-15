@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Heist.Team
@@ -29,6 +30,20 @@ namespace Heist.Team
             };
 
             Console.WriteLine($"{count} members on team.");
+        }
+
+        public int sumSkill()
+        {
+            List<int> skillSum = new List<int>();
+
+            foreach (var i in Team)
+            {
+                skillSum.Add(i.Skill);
+            }
+
+            int result = skillSum.Sum();
+
+            return result;
         }
     }
 }

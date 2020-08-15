@@ -1,4 +1,5 @@
 ﻿using Heist.Team;
+using Heist.Banks;
 using System;
 
 namespace Heist
@@ -7,7 +8,8 @@ namespace Heist
     {   
         static void Main(string[] args)
         {
-            var newt = new TeamMember();
+            var newTeam = new TeamMember();
+            var bank = new Bank(100);
 
             Console.WriteLine("Plan your heist! Press Enter");
 
@@ -29,13 +31,22 @@ namespace Heist
                 Console.WriteLine("Now enter their courage factor (with decimals please): ");
                 var tCourage = Convert.ToDouble(Console.ReadLine());
 
-                newt.createTeamMember(tName, tSkill, tCourage);
-
-                newt.listTeam();
+                newTeam.createTeamMember(tName, tSkill, tCourage);
 
             } while (input != "" || input != "exit");
-            
 
+            int result = newTeam.sumSkill();
+
+            Console.WriteLine($"Skill: {result}, Difficulty: {bank.BankDifficulty}\r\n");
+
+            if (result > bank.BankDifficulty)
+            {
+                Console.WriteLine("You successfully robbed the bank!");
+            }
+            else
+            {
+                Console.WriteLine("You failed! Looks like you're going to jail.");
+                }
         }
     }
 }
